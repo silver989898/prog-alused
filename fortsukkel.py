@@ -50,8 +50,8 @@ def cross_sum(numbers: str) -> int:
     print(cross_sum("4129458")) => 33
     """
     total = 0
-    for I in range(len(numbers)):
-        total += int(numbers[i]) + int(numbers[-i-1])
+    for num in numbers:
+        total += int(num)
     return total
 
 
@@ -90,12 +90,10 @@ def compound_interest(amount: int, years: int, rate: int) -> float:
     print(compound_interest(2000, 6, 8)) => 3173.748645888
     """
     principal = amount
-    num_years = years
-    annual_rate = rate / 100
-    monthly_rate = annual_rate / 12
-    monthly_payments = num_years * 12
-    total_payments = principal * (1 + monthly_rate) ** monthly_payments - principal
-    return total_payments
+    for year in range(years):
+        interest = principal * rate / 100
+        principal += interest
+    return principal
 
 
 def remove_vowels(original_string: str) -> str:
@@ -106,7 +104,7 @@ def remove_vowels(original_string: str) -> str:
     print(remove_vowels("hklmn")) => hklmn
     print(remove_vowels("aauuiii")) => ""
     """
-    vowels = "aeiou"
+    vowels = "aeiouõäöü"
     result = ""
     for char in original_string:
         if char not in vowels:
