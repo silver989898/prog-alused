@@ -11,7 +11,7 @@ def sum_and_difference(num_a: int, num_b: int) -> tuple:
 
 def float_division(num_a: int, num_b: int) -> float:
     """Divide given variables num_a and num_b and return the result."""
-    division = num_a / bum_b
+    division = num_a / num_b
     return division
 
 
@@ -37,13 +37,13 @@ def find_average(num_a: int, num_b: int) -> float:
 
 def area_of_a_circle(radius: float) -> float:
     """Calculate and return the area of a circle."""
-    circle_area = round(radius * math.pi ** 2, 1)
+    circle_area = round(radius ** 2 * math.pi, 2)
     return circle_area
 
 
 def area_of_an_equilateral_triangle(side_length: float) -> int:
     """Calculate and return the area of an equilateral triangle."""
-    triangle_area = round(math.sqrt(3) / 4 * side_length ** 2, 2)
+    triangle_area = round(math.sqrt(3) / 4 * side_length ** 2, 0)
     return triangle_area
 
 
@@ -90,3 +90,4 @@ def adding_numbers(num_a: int, num_b: int) -> str:
     """Return given numbers added together as a string."""
     string_numbers = str(num_a + num_b)
     return string_numbers
+
